@@ -12,7 +12,7 @@ public class RecursoMapper {
     public Function<RecursoDTO, Recurso> mapperToDato(){
         return  recursoActualizado -> {
             var recurso = new Recurso();
-            recurso.setId(recursoActualizado.getRecursoid());
+            recurso.setId(recursoActualizado.getId());
             recurso.setTitulo(recursoActualizado.getTitulo());
             recurso.setTipo(recursoActualizado.getTipo());
             recurso.setArea(recursoActualizado.getArea());

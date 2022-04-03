@@ -1,7 +1,7 @@
 package com.proyecto.biblioteca.router;
 
 import com.proyecto.biblioteca.dto.RecursoDTO;
-import com.proyecto.biblioteca.useCase.impl.MostrarRecursosCasoUsoImpl;
+import com.proyecto.biblioteca.useCase.impl.MostrarRecursosUseCaseImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -17,7 +17,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class MostrarRecursosRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> MostrarRecursos(MostrarRecursosCasoUsoImpl listarRecursosCasoUso){
+    public RouterFunction<ServerResponse> MostrarRecursos(MostrarRecursosUseCaseImpl listarRecursosCasoUso){
 
         return route(GET("/biblioteca/mostrarRecursos").and(accept(MediaType.APPLICATION_JSON)),
                 request -> ServerResponse.ok()

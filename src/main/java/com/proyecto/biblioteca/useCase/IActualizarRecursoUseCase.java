@@ -3,7 +3,7 @@ package com.proyecto.biblioteca.useCase;
 import com.proyecto.biblioteca.dto.RecursoDTO;
 import reactor.core.publisher.Mono;
 
-public interface IAgregarRecurso {
+public interface IActualizarRecursoUseCase {
 
-    Mono<RecursoDTO> addRecurso(RecursoDTO recursoDTO);
+    Mono<RecursoDTO> editarRecurso(RecursoDTO recursoDTO);
 }

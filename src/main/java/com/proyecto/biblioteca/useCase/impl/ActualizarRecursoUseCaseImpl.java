@@ -3,32 +3,34 @@ package com.proyecto.biblioteca.useCase.impl;
 import com.proyecto.biblioteca.dto.RecursoDTO;
 import com.proyecto.biblioteca.mapper.RecursoMapper;
 import com.proyecto.biblioteca.repository.BibliotecaRepository;
-import com.proyecto.biblioteca.useCase.IAgregarRecursoUseCase;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.proyecto.biblioteca.useCase.IActualizarRecursoUseCase;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
 
+import java.util.Objects;
+
 @Service
 @Validated
-public class AgregarRecursoUseCaseImpl implements IAgregarRecursoUseCase {
+public class ActualizarRecursoUseCaseImpl implements IActualizarRecursoUseCase {
 
     private final BibliotecaRepository bibliotecaRepository;
-    private final RecursoMapper mapper;
+    private final RecursoMapper recursoMapper;
 
-    @Autowired
-    public AgregarRecursoUseCaseImpl(BibliotecaRepository bibliotecaRepository, RecursoMapper mapper) {
+    public ActualizarRecursoUseCaseImpl(BibliotecaRepository bibliotecaRepository, RecursoMapper recursoMapper) {
         this.bibliotecaRepository = bibliotecaRepository;
-        this.mapper = mapper;
+        this.recursoMapper = recursoMapper;
     }
 
     @Override
-    public Mono<RecursoDTO> addRecurso(RecursoDTO recursoDTO) {
+    public Mono<RecursoDTO> editarRecurso(RecursoDTO recursoDTO){
+        String id = Objects.requireNonNull(recursoDTO.getId(), "Por favor ingrese el id");
+
         return bibliotecaRepository
-                .save(mapper
+                .save(recursoMapper
                         .mapperToDato()
                         .apply(recursoDTO))
-                .map(recurso -> mapper
+                .map(recurso -> recursoMapper
                         .mapDatoToDTO()
                         .apply(recurso));
     }
