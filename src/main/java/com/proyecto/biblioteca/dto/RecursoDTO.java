@@ -8,7 +8,7 @@ import java.util.Objects;
 public class RecursoDTO {
 
     @Id
-    private String id;
+    private String recursoid;
 
     private String titulo;
     private String tipo;
@@ -20,7 +20,7 @@ public class RecursoDTO {
     }
 
     public RecursoDTO(String recursoid, String titulo, String tipo, String area) {
-        this.id = recursoid;
+        this.recursoid = recursoid;
         this.titulo = titulo;
         this.tipo = tipo;
         this.area = area;
@@ -29,11 +29,11 @@ public class RecursoDTO {
     }
 
     public String getRecursoid() {
-        return id;
+        return recursoid;
     }
 
     public void setRecursoid(String recursoid) {
-        this.id = recursoid;
+        this.recursoid = recursoid;
     }
 
     public String getTitulo() {
@@ -81,11 +81,11 @@ public class RecursoDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RecursoDTO that = (RecursoDTO) o;
-        return disponible == that.disponible && Objects.equals(id, that.id) && Objects.equals(titulo, that.titulo) && Objects.equals(tipo, that.tipo) && Objects.equals(area, that.area) && Objects.equals(fecha, that.fecha);
+        return disponible == that.disponible && Objects.equals(recursoid, that.recursoid) && Objects.equals(titulo, that.titulo) && Objects.equals(tipo, that.tipo) && Objects.equals(area, that.area) && Objects.equals(fecha, that.fecha);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, titulo, tipo, area, disponible, fecha);
+        return Objects.hash(recursoid, titulo, tipo, area, disponible, fecha);
     }
 }
