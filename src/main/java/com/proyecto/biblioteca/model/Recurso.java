@@ -7,8 +7,8 @@ import java.time.LocalDate;
 public class Recurso {
 
     @Id
-    private String recursoId;
-    
+    private String id;
+
     private String titulo;
     private String tipo;
     private String area;
@@ -16,11 +16,11 @@ public class Recurso {
     private LocalDate fecha;
 
     public String getId() {
-        return recursoId;
+        return id;
     }
 
     public void setId(String id) {
-        this.recursoId = id;
+        this.id = id;
     }
 
     public String getTitulo() {
