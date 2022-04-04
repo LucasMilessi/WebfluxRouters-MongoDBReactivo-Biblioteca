@@ -14,18 +14,18 @@ public class RecursoDTO {
     private String tipo;
     private String area;
     private boolean disponible;
-    private LocalDate fecha;
+    private LocalDate fecha = null;
 
     public RecursoDTO() {
     }
 
-    public RecursoDTO(String recursoid, String titulo, String tipo, String area) {
+    public RecursoDTO(String recursoid, String titulo, String tipo, String area, LocalDate fecha) {
         this.id = recursoid;
         this.titulo = titulo;
         this.tipo = tipo;
         this.area = area;
         this.disponible = false;
-        this.fecha = LocalDate.now();
+        this.fecha = fecha;
     }
 
     public String getId() {

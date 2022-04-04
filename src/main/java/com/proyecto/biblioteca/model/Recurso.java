@@ -15,7 +15,7 @@ public class Recurso {
     private String tipo;
     private String area;
     private boolean disponible;
-    private LocalDate fecha;
+    private LocalDate fecha = null;
 
     public String getId() {
         return id;

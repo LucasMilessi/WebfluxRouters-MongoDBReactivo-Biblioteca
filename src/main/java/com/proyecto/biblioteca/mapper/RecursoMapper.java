@@ -27,7 +27,8 @@ public class RecursoMapper {
                 entity.getId(),
                 entity.getTitulo(),
                 entity.getTipo(),
-                entity.getArea()
+                entity.getArea(),
+                entity.getFecha()
         );
     }
 }
